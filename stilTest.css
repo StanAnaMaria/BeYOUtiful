@@ -1,0 +1,297 @@
+*{margin: 0;
+    padding: 0;
+ }
+
+/*antet*/
+ .antet{
+  background-color: #f0f0f5;
+  list-style-type: none;
+  padding: 10px;
+}
+
+.antet li{
+  display: inline;
+  padding: 25px;
+  float: left;
+}
+
+.visit{
+    background-image: url('salon1.jpg');
+    background-attachment:scroll;
+    background-size:cover;
+    padding: 100px 180px;
+    margin:0;
+    text-align:center;
+    color: white;
+    line-height: 1.3;
+    }
+    
+.visit p{
+    text-align: center;
+    }
+    
+.visit a{
+    margin-top: 10px;
+    }
+ 
+    
+.salon{
+    text-align: center;
+    margin: 70px;
+    }
+    
+p{
+    font-family:'Times New Roman', Times, serif;
+    }
+
+/*butoane*/
+a{
+    background-color:#ffcc99;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration:none;
+    display: inline-block;
+    }
+a:hover{
+    background-color: white;
+    color: #ffcc99;
+    }
+
+/*img{
+    height: 100%;
+}*/
+
+
+/*tabel preturi*/
+table {
+    border-collapse: collapse;
+    width: 85%;
+    margin: 0 100px 50px;
+}
+
+tr:hover{
+    background-color: #ffcc99;
+    color: black;
+}
+
+h1{
+    text-align: center;
+    margin: 0 50px 50px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    line-height: 40px;
+    border-bottom: 1px solid #DDD;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#ffcc99;
+}
+
+.lista{
+    background-color:white;
+    list-style-type: none;
+    /*margin-top: 50px;
+    margin-left: 200px;
+    margin-right: 200px;
+    padding: 50px;*/
+    font-size: 20px;
+    /*text-align: center;*/
+}
+
+.lista.unu{
+    position: relative;
+    top: 200px;
+    left: 250px;
+}
+
+.lista.doi{
+    position: relative;
+    left: 700px;
+}
+
+.lista.trei{
+    position: relative;
+    top:-205px;
+    left:1150px;
+}
+
+.subsol{
+    background-color: #ffcc99;
+    padding:40px 100px 200px;
+    color: white;
+}
+
+div p{
+    margin: 7vw;
+    text-align: justify;
+    line-height: 1.5;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+div h1{
+    font-style: italic;
+    margin-top: 120px;
+}
+
+.recenzii{
+    background-color:#f0f0f5;
+    max-width: 300px;
+    border: 15px solid #ffcc99;
+    margin: 100px;
+    padding: 50px;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+/*imagini abbout*/
+.img-container {
+    float: left;
+    width: 28%;
+  }
+  
+  .imagini::after {
+    content: "";
+    clear: both;
+    display: table;
+    box-sizing: border-box;
+    width: 80%;
+    margin: auto;
+  }
+
+
+  /*CARUSEL*/
+  * {box-sizing: border-box}
+
+/*body {font-family: Verdana, sans-serif; margin:0}*/
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+/*BARA NAVIGARE*/
+.navbar {
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+  }
+  
+  .navbar a {
+    float: left;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 23px;
+    width: 16.6666667%;
+    text-align: center;
+  }
+  
+  .navbar a:hover {
+    background-color: white;
+    color: #ffcc99;
+  }
+  
+  .navbar a.active {
+    background-color: #ffb366;
+  }
+  
+  @media screen and (max-width: 500px) {
+    .navbar a {
+      float: none;
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+  }
