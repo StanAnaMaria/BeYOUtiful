@@ -115,7 +115,7 @@ if(isset($_POST['submit'])){
 
 <div class="form-container">
 
-    <form action="" method="post">
+    <form action="" method="post"> <!--afiseaza un formular cu 4 campuri si un buton de trimitere-->
         <h3>Register now</h3>
         <?php
         if(isset($error))

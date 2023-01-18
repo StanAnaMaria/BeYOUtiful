@@ -2,21 +2,32 @@
 
 @include 'config.php';
 
-if(isset($_POST['submit'])){
-    $email=mysqli_real_escape_string($conn,$_POST['email']);
-    $pass=md5($_POST['password']);
+session_start();
 
-    $select =" SELECT * FROM customer WHERE email = '$email' && passoword = '$pass' ";
+if(isset($_POST['submit'])){
+    $email=mysqli_real_escape_string($conn, $_POST['email']);
+    $pass=md5($_POST['password']);
+    $cpass=md5($_POST['password']);
+
+    $select =" SELECT * FROM customer WHERE email = '$email' &&  password='$pass' ";
+   
 
     $result = mysqli_query($conn, $select);
 
-    if(mysqli_num_rows($result) > 0)
-    {
-        $row=mysqli_fetch_array($result);
-        
-    }else{
-        $error[]='incorrect email or password!';
+    /*$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+    if(mysqli_num_rows($result) > 0){
+      $error[]='incorrect 33333email or password!';
     }
+    else{
+        $error[]='incorrect email or password!';
+    }*/
+    if(mysqli_num_rows($result) > 0){
+      $row=myqli_fetch_array($result);
+      $_SESSION['name'] =$row['name'];
+      header('location:user_page.php');
+    }else{
+      $error[]='incorrect email or password!';
+  }
 };
 ?>
 
