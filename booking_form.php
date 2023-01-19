@@ -2,23 +2,6 @@
 
 @include 'config.php';
 
-if(isset($_POST['submit'])){
-    $
-    $email=mysqli_real_escape_string($conn,$_POST['email']);
-    $pass=md5($_POST['password']);
-
-    $select =" SELECT * FROM customer WHERE email = '$email' && passoword = '$pass' ";
-
-    $result = mysqli_query($conn, $select);
-
-    if(mysqli_num_rows($result) > 0)
-    {
-        $row=mysqli_fetch_array($result);
-        
-    }else{
-        $error[]='incorrect email or password!';
-    }
-};
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +12,54 @@ if(isset($_POST['submit'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookly-Appointment Book</title>
 </head>
+<script>
+    var serviciiCat1=["HAIRCUT","BRETTON CUT","CUT + WASHED + HAIRED","SHORT HAIRSTYLE","DYED/BLEACHED LONG HAIR","SHORT HAIRSTYLE","DYED/BLEACHED MEDIUM HAIR","SHORT HAIRSTYLE","DYED/BLEACHED SHORT HAIR"]
+    var serviciiCat2=["MAINTENANCE","APPLICATION OF FALSE NAILS","SEMI-PERMANENT PEDICURE"]
+    var serviciiCat3=["THOUGHT","THOUGHT FORM","DYED EYEBROWS"]
+    var serviciiCat4=["1D","2D","3D","4D","1D + LAMINATION","2D + LAMINATION","3D + LAMINATION","4D + LAMINATION"]
+
+    function update_combo2()
+    {
+        var combo1_value=document.getElementById("combo1").value
+        document.getElementById("combo2").options.length=0;
+        switch(combo1_value)
+        {
+            case "1":
+                /*fill combo 2 with categorie1 */
+                for(i=0;i<serviciiCat1.length;i++)
+                {
+                    var opt=document.createElement("option")
+                    opt.text=serviciiCat1[i];
+                    document.getElementById("combo2").appendChild(opt)
+                }
+                break;
+            case "2":
+                for(i=0;i<serviciiCat2.length;i++)
+                {
+                    var opt=document.createElement("option")
+                    opt.text=serviciiCat2[i];
+                    document.getElementById("combo2").appendChild(opt)
+                }
+                break;
+            case "3":
+                for(i=0;i<serviciiCat3.length;i++)
+                {
+                    var opt=document.createElement("option")
+                    opt.text=serviciiCat3[i];
+                    document.getElementById("combo2").appendChild(opt)
+                }
+                break;
+            case "4":
+                for(i=0;i<serviciiCat4.length;i++)
+                {
+                    var opt=document.createElement("option")
+                    opt.text=serviciiCat4[i];
+                    document.getElementById("combo2").appendChild(opt)
+                }
+                break;
+        }
+    }
+</script>
 <style>
 
 *{
@@ -143,8 +174,8 @@ if(isset($_POST['submit'])){
                 <div>
                     <!-- <---this is the select option--->
                     <span>Category</span>
-                    <select name="category" id="category" required>
-                        <option value="">Select departament</option>
+                    <select name="category" id="combo1" onchange="update_combo2()">
+                        <option value="0">Select departament</option>
                         <option value="1">HAIR SALON</option>
                         <option value="2">BEAUTY</option>
                         <option value="3">MANI PEDI</option>
@@ -156,9 +187,9 @@ if(isset($_POST['submit'])){
                 <div>
                     <!-- <---this is the select option--->
                     <span>Service</span>
-                    <select name="service" id="service" required>
-                        <option value="">Please choose the desired service</option>
-                        <option value="1">HAIRCUT</option>
+                    <select name="service" id="combo2">
+                        <option value="0">Please choose the desired service</option>
+                        <!--<option value="1">HAIRCUT</option>
                         <option value="2">BRETTON CUT</option>
                         <option value="3">CUT + WASHED + HAIRED</option>
                         <option value="4">SHORT HAIRSTYLE</option>
@@ -178,7 +209,7 @@ if(isset($_POST['submit'])){
                         <option value="18">1D + LAMINATION</option>
                         <option value="19">2D + LAMINATION</option>
                         <option value="20">2D + LAMINATION</option>
-                        <option value="20">4D + LAMINATION</option>
+                        <option value="20">4D + LAMINATION</option>-->
                     </select>
                     <!-- <---this is the select option--->
                 </div>
@@ -207,7 +238,7 @@ if(isset($_POST['submit'])){
                     </select>
                     <!-- <---this is the select option--->
                 </div>
-
+                <!--
                 <div>
                     <span>Your full name ?</span>
                     <input type="text" name="name" id="name" placeholder="Write your name here" required>
@@ -221,7 +252,7 @@ if(isset($_POST['submit'])){
                 <div>
                     <span>Your phone number ?</span>
                     <input type="number" name="number" id="number" placeholder="Write your number here..." required>
-                </div>
+                </div>-->
                 <div id="submit">
                     <input type="submit" value="SUBMIT" id="submit">
                 </div>

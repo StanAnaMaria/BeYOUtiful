@@ -14,7 +14,7 @@ if(isset($_POST['submit'])){
 
     $result = mysqli_query($conn, $select);
 
-    /*$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+    $row=mysqli_fetch_array($result, MYSQLI_ASSOC);/*
     if(mysqli_num_rows($result) > 0){
       $error[]='incorrect 33333email or password!';
     }
@@ -22,9 +22,9 @@ if(isset($_POST['submit'])){
         $error[]='incorrect email or password!';
     }*/
     if(mysqli_num_rows($result) > 0){
-      $row=myqli_fetch_array($result);
+     /* $row=myqli_fetch_array($result);*/
       $_SESSION['name'] =$row['name'];
-      header('location:user_page.php');
+      header('location:user_file.php');
     }else{
       $error[]='incorrect email or password!';
   }
@@ -84,7 +84,7 @@ if(isset($_POST['submit'])){
     background:#ffcc99;
     text-transform:capitalize;  /*fiecare cuvant cu litera mare*/
     font-size:20px;
-    cursor:pointer;
+    cursor:pointer;/*apare manuta*/
   }
 
   .form-container form .form-btn:hover{
