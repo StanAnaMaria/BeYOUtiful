@@ -7,9 +7,8 @@
 /*ANTET*/
  .antet{
   background-color: #f0f0f5;
-  list-style-type: none; /*sa nu aiba lista marcatori*/
-  padding: 10px; 
-  
+  list-style-type: none;
+  padding: 10px;
 }
 
 .antet li{
@@ -26,7 +25,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding: 160px 180px;
-  width: 100%;
 }
 
 .banner-text {
@@ -81,8 +79,9 @@ p{
 /*PAGINA ABOUT*/
 .about h1{
   text-align: center;
-  margin: 120px 50px 50px;
+  margin: 0 50px 50px;
   font-style: italic;
+  margin-top: 120px;
 }
 
 .about p{
@@ -95,7 +94,7 @@ p{
 
 .recenzii{
   background-color:#f0f0f5;
-  max-width: 100%;
+  max-width: 500px;
   border: 15px solid #ffcc99;
   margin: 100px;
   margin-left: 500px;
@@ -108,8 +107,9 @@ p{
 /*PAGINA SERVICE*/
 .paragraf h1{
   text-align: center;
-  margin: 120px 50px 50px;
+  margin: 0 50px 50px;
   font-style: italic;
+  margin-top: 120px;
 }
 
 .paragraf p{
@@ -122,7 +122,7 @@ p{
 /*tabel preturi*/
 .tabelPret {
     border-collapse: collapse;
-    width: 100%;
+    width: 85%;
     margin: 0 100px 50px;
 }
 
@@ -166,7 +166,7 @@ ul {
 /*BARA NAVIGARE*/
 .navbar {
   width: 100%;
-  background-color: #ffcc99;
+  background-color: #555;
   overflow: auto;
 }
 
@@ -176,7 +176,7 @@ ul {
   color: white;
   text-decoration: none;
   font-size: 23px;
-  width: 100%;
+  width: 16.6666667%;
   text-align: center;
 }
 
