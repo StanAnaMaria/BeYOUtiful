@@ -7,7 +7,7 @@
     <title>Image Gallery</title>
     <link rel="stylesheet" type="text/css" href="stilTest.css">
     <link rel="icon" type="image/x-icon" href="ico.ico">
-    <script src="myScript.js"></script>
+    <!--<script src="myScript.js"></script>-->
 </head>
 <style>
   * {box-sizing: border-box}
@@ -52,15 +52,15 @@
   /* Caption text */
   .text {
     color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
+    font-size: 20px;
+    padding: 15px 12px;
     position: absolute;
     bottom: 8px;
     width: 100%;
     text-align: center;
   }
   
-  /* Number text (1/3 etc) */
+  /* Number text (1/7 etc) */
   .numbertext {
     color: #f2f2f2;
     font-size: 12px;
@@ -115,7 +115,7 @@
         <a href="service.html">SERVICE</a> 
         <a class="active" href="imageGallery.html">IMAGE GALLERY</a>
         <a href="contact.html">CONTACT</a>
-        <a href="http://localhost/BeYOUtiful/login_form.php">LOGIN</a>       <!--<a href="formular_selectie.php">LOGIN</a>    -->
+        <a href="http://localhost/BeYOUtiful/login_form.php">LOGIN</a>       
     </div>
 
     <h1 style="text-align:center;margin: 0 50px 50px; margin-top: 120px; font-style: italic;">IMAGE GALLERY</h1>
@@ -125,19 +125,19 @@
       <div class="mySlides fade">
         <div class="numbertext">1 / 7</div>
         <img src="salon1.jpg" style="width:100%">
-        <div class="text">HAIRDRESSER</div>
+        <div class="text">HAIR SALON</div>
       </div>
       
       <div class="mySlides fade">
         <div class="numbertext">2 / 7</div>
         <img src="salon2.jpg" style="width:100%">
-        <div class="text">HAIRDRESSER</div>
+        <div class="text">HAIR SALON</div>
       </div>
       
       <div class="mySlides fade">
         <div class="numbertext">3 / 7</div>
         <img src="salon3.jpg" style="width:100%">
-        <div class="text">HAIRDRESSER</div>
+        <div class="text">HAIR SALON</div>
       </div>
 
       <div class="mySlides fade">
@@ -154,7 +154,7 @@
 
       <div class="mySlides fade">
         <div class="numbertext">6 / 7</div>
-        <img src="cosmetica2.jpg" style="width:100%">
+        <img src="cosmetica3.jpg" style="width:100%">
         <div class="text">BEAUTY</div>
       </div>
 
@@ -179,6 +179,35 @@
         <span class="dot" onclick="currentSlide(6)"></span> 
         <span class="dot" onclick="currentSlide(7)"></span> 
       </div>
+
+      <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+        }
+        </script>
 
       <footer class="subsol">
         <table style="width:100%">

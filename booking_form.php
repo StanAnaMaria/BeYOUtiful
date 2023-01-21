@@ -11,6 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookly-Appointment Book</title>
+    <link rel="icon" type="image/x-icon" href="ico.ico">
 </head>
 <script>
     var serviciiCat1=["HAIRCUT","BRETTON CUT","CUT + WASHED + HAIRED","SHORT HAIRSTYLE","DYED/BLEACHED LONG HAIR","SHORT HAIRSTYLE","DYED/BLEACHED MEDIUM HAIR","SHORT HAIRSTYLE","DYED/BLEACHED SHORT HAIR"]
@@ -22,7 +23,10 @@
     {
         var combo1_value=document.getElementById("combo1").value
         document.getElementById("combo2").options.length=0;
-        switch(combo1_value)
+        switch(combo1_value)/*Expresia de comutare este evaluată o dată.
+                            Valoarea expresiei este comparată cu valorile fiecărui caz.
+                            Dacă există o potrivire, blocul de cod asociat este executat.
+                            Dacă nu există nicio potrivire, blocul de cod implicit este executat.*/
         {
             case "1":
                 /*fill combo 2 with categorie1 */
@@ -134,6 +138,7 @@
 #submit{
     width: 100%;
     text-align: center;
+    cursor:pointer;
 }
 #submit input{
     font-family: 'Times New Roman', Times, serif;
@@ -169,23 +174,22 @@
         <div class="form-text">
             <h1>Book Now</h1>
         </div>
+
         <div class="main-form">
             <form action="index.php" method="get">
                 <div>
-                    <!-- <---this is the select option--->
+                    <!--this is the select option-->
                     <span>Category</span>
-                    <select name="category" id="combo1" onchange="update_combo2()">
+                    <select name="category" id="combo1" onchange="update_combo2()"> <!--se apeleaza functia-->
                         <option value="0">Select departament</option>
                         <option value="1">HAIR SALON</option>
                         <option value="2">BEAUTY</option>
                         <option value="3">MANI PEDI</option>
                         <option value="4">EYELASHES</option>
                     </select>
-                    <!-- <---this is the select option--->
                 </div>
 
                 <div>
-                    <!-- <---this is the select option--->
                     <span>Service</span>
                     <select name="service" id="combo2">
                         <option value="0">Please choose the desired service</option>
@@ -211,7 +215,6 @@
                         <option value="20">2D + LAMINATION</option>
                         <option value="20">4D + LAMINATION</option>-->
                     </select>
-                    <!-- <---this is the select option--->
                 </div>
 
                 <div>
@@ -220,7 +223,7 @@
                 </div>
 
                 <div>
-                    <!-- <---this is the select option--->
+                    <!--this is the select option-->
                     <span>What time ?</span>
                     <select name="time" id="time" required>
                     <option value="">Please choose time</option>
@@ -236,7 +239,6 @@
                         <option value="2">6:00 pm</option>
                         <option value="3">7:00 pm</option>
                     </select>
-                    <!-- <---this is the select option--->
                 </div>
                 <!--
                 <div>
